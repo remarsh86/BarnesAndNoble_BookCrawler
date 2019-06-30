@@ -12,9 +12,33 @@ import parser as ps
 
 scraped_urls=[]
 #counter =0
-def scrape(url ):
 
-    url = url #relativ URL
+def crawl(url, content):
+    #crawl other urls on page:
+    for item in content.find_all("a", href=True):
+        #avoid cycles
+        url2 = item['href'] #relative url
+        url2 = urljoin(url, url2)  # Actual URL
+        #print("URL2!!!!!!!: ", url2)
+        if url2 in scraped_urls:
+            print("already visited ", url2)
+        else:
+            #scraped_urls.append(url2)
+            #only crawl barnesandnoble sites
+            if (str(url2).startswith("https://www.barnesandnoble.com/w/")):
+                if ('javascript' not in str(url2)):
+                    print("follow ", url2)
+                    scrape(url2)
+            else:
+                print("don't follow: ", url2)
+
+
+def scrape(url ):
+    print("what is in scraped_url: ")
+    for x in scraped_urls:
+        print(x)
+    url = url
+
     #Avoid 403 Errors
     headers = requests.utils.default_headers()
     headers.update({
@@ -25,26 +49,19 @@ def scrape(url ):
     raw_html = response.content
     content = BeautifulSoup(raw_html, "lxml")
 
-    #crawl other urls on page:
-    for item in content.find_all("a", href=True):
-        #avoid cycles
-        url2 = item['href']
-        print(url2)
-        if url2 in scraped_urls:
-            print("already visited")
-        else:
-            scraped_urls.append(url2)
-            url2 = urljoin(url, url2) #Actual URL
-            print("URL2!!!!!!!: ", url2)
-            if str(url2).startswith("https://www.barnesandnoble.com/w/"):
-                if "ean" in str(url):
-                    print("Parse book info for page: ", url2)
-                    response = requests.get(url2, timeout=5)
-                    content_url2 = BeautifulSoup(response.content, "html.parser")
-                    ps.parse_book_info(content_url2)
-                else:
-                    print("follow ", url2)
-                    scrape(url2)
+    if str(url) not in scraped_urls:
+        scraped_urls.append(url)
+        print("!!!!! in else!!!!")
+        # if str(url).startswith("https://www.barnesandnoble.com/w/"): # this could be a book detail page
+        if "ean" in str(url):
+            print("Parse book info for page: ", url)
+            # response = requests.get(url, timeout=5)
+            # content_url2 = BeautifulSoup(response.content, "html.parser")
+            # ps.parse_book_info(content_url2)
+            ps.parse_book_info(content)
+
+        crawl(url, content)
+
 
 # def parse_book_info(content):
 #     # find all html tables oc class "pain centered and parse book info"
@@ -97,6 +114,8 @@ def scrape(url ):
 #start scraper
 #scrape('http://books.toscrape.com/index.html')
 scrape('https://www.barnesandnoble.com/')
+
+#scrape('https://www.barnesandnoble.com/reviews/england-under-the-normans-and-angevins-1066-1272-h-w-c-davis/1101964326?ean=9781411446687')
 print("!!!!!!!!!!!!!!!")
 for x in scraped_urls:
     print(x)
