@@ -29,15 +29,14 @@ def scrape(url ):
     for item in content.find_all("a", href=True):
         #avoid cycles
         url2 = item['href']
-        url2 = urljoin(url, url2)  # Actual URL
-        #print(url2)
+        print(url2)
         if url2 in scraped_urls:
-            print("already visited ", url2)
+            print("already visited")
         else:
             scraped_urls.append(url2)
-            #url2 = urljoin(url, url2) #Actual URL
+            url2 = urljoin(url, url2) #Actual URL
             print("URL2!!!!!!!: ", url2)
-            if str(url).startswith("https://www.barnesandnoble.com/w/"):
+            if str(url2).startswith("https://www.barnesandnoble.com/w/"):
                 if "ean" in str(url):
                     print("Parse book info for page: ", url2)
                     response = requests.get(url2, timeout=5)
