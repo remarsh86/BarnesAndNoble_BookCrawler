@@ -4,6 +4,11 @@ from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urljoin
 from urllib.request import urlopen
+# #from __future__ import print_function
+# import pysolr
+# import datetime
+# from datetime import datetime
+import parser as ps
 
 scraped_urls=[]
 #counter =0
@@ -18,71 +23,76 @@ def scrape(url ):
     #response = requests.get(url, timeout =5)
     response = requests.get(url,  headers)
     raw_html = response.content
-    #print(raw_html)
-    content = BeautifulSoup(raw_html, "html.parser")
-    #print("URL: ", response.url)
-    #print("!!!!!!!!!content: ",  content)
-    # a_tag = content.find("a")
-    # print(a_tag)
+    content = BeautifulSoup(raw_html, "lxml")
 
-
-
-    #scrape other urls on page:
+    #crawl other urls on page:
     for item in content.find_all("a", href=True):
         #avoid cycles
         url2 = item['href']
-        print(url2)
+        url2 = urljoin(url, url2)  # Actual URL
+        #print(url2)
         if url2 in scraped_urls:
-            print()
+            print("already visited ", url2)
         else:
             scraped_urls.append(url2)
-            url2 = urljoin(url, url2) #Actual URL
+            #url2 = urljoin(url, url2) #Actual URL
             print("URL2!!!!!!!: ", url2)
-            if str(url2).startswith("https://www.barnesandnoble.com"):
+            if str(url).startswith("https://www.barnesandnoble.com/w/"):
                 if "ean" in str(url):
-                    print("Parse book info!")
-                    parse_book_info(content)
+                    print("Parse book info for page: ", url2)
+                    response = requests.get(url2, timeout=5)
+                    content_url2 = BeautifulSoup(response.content, "html.parser")
+                    ps.parse_book_info(content_url2)
                 else:
                     print("follow ", url2)
                     scrape(url2)
 
-def parse_book_info(content):
-    product_table = content.find_all("table", class_="plain centered")
-    print(product_table)
+# def parse_book_info(content):
+#     # find all html tables oc class "pain centered and parse book info"
+#     item = {}
+#     title = content.find("h1", class_="pdp-header-title").contents[0]
+#     item['Title'] = title
+#
+#
+#     product_table = content.find_all("table", class_="plain centered")
+#     #print(product_table)
+#     table_rows = product_table[0].find('tbody').findAll('tr')
+#
+#     for row in table_rows:
+#         print()
+#         # print(row)
+#         th = row.find('th').contents[0]
+#         print("th: ", th)
+#         if "Publisher" in th: #publisher row has a different format because of a url
+#             td = row.find('td').text
+#             td = td.strip('\n')  # remove trailing new line
+#         else:
+#             td = row.find('td').contents[0]
+#         print("td: ", td)
+#         item[th]=td
+#
+#     index_item(item)
 
-    table_rows = product_table[0].find('tbody').findAll('tr')
-    item = {}
-    for row in table_rows:
-        print()
-        # print(row)
-        th = row.find('th').contents[0]
-        print("th: ", th)
-        if "Publisher" in th:
-            td = row.find('td').text
-            td = td.strip('\n')  # remove trailing new line
-        else:
-            td = row.find('td').contents[0]
-        print("td: ", td)
-        item[th]=td
 
-
-def index_item():
-    # curl - X
-    # POST - H
-    # 'Content-Type: application/json' 'http://localhost:8983/solr/my_collection/update/json/docs' - -data - binary
-    # '
-    # {
-    #     "id": "1",
-    #     "title": "Doc 1"
-    # }
-    # '
-
-    # req = urllib.Request(url='http://localhost:8983/solr/web/update/json?commit=true',
-    #                       data={})
-    # req.add_header('Content-type', 'application/json')
-    # f = urlopen(req)
-
-    pass
+# def index_item(item):
+#     #item is a dictionary
+#     # solr = pysolr.Solr('http://localhost:8983/solr/web', timeout=10)
+#     #
+#     # solr.add([
+#     #     {
+#     #         "title": "xx",
+#     #         "authors": ["aaa", "bbb", "ccc"],
+#     #         "isbn": item['ISBN-13:'],
+#     #         "publisher": item['Publisher:'],
+#     #         "publication_date": datetime.strptime(item['Publication date:'],'%m/%d/%Y') ,
+#     #         "pages": item['Pages:'],
+#     #         "sales_rank": item['Sales rank:'],
+#     #         "product_dimensions": ['Product dimensions:']
+#     #     },
+#     # ])
+#     # solr.commit()
+#
+#     pass
 
 
 #start scraper
