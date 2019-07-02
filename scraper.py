@@ -67,7 +67,7 @@ class Scraper():
 
             if full_url in self.scraped_urls:
                 print("already visited")
-            elif str(full_url).startswith("https://www.barnesandnoble.com/"):
+            elif str(full_url).startswith("https://www.barnesandnoble.com/w/"):
                 #     print("Add url to list", full_url)
                 #     #self.scrape(url2)
                 #     found_urls.append(full_url)
