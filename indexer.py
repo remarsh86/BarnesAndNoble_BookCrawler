@@ -7,7 +7,7 @@ from datetime import datetime
 def index_item(item):
     solr_book = {}
     #item is a dictionary
-    solr = pysolr.Solr('http://localhost:8983/solr/web', timeout=10)
+    solr = pysolr.Solr('http://localhost:8983/solr/web2', timeout=10)
 
     # solr_book = {}
     accepted_fields = ['title', 'authors', 'isbn_13', 'publisher', 'publication_date', 'pages', 'sales_rank:', 'product_dimensions',
