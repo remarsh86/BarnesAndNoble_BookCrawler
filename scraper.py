@@ -11,13 +11,17 @@ import re
 
 class Scraper():
 
-    scraped_urls=[]
+    pages_visited=[]
     isbns=[]
 
 
-    def scrape(self, url):
-        print("scraped urls: ", self.scraped_urls[:5])
-        self.scraped_urls.append(url)
+    def scrape(self, url, links_todo):
+        print("scraped urls: ", self.pages_visited)
+        print("links_todo: ", links_todo)
+        for x in self.pages_visited:
+            if x in links_todo:
+                print("oh no: the following book is in linked_todo and scraped_urls: ", x)
+        self.pages_visited.append(url)
         #url = url
         #Avoid 403 Errors
         headers = requests.utils.default_headers()
@@ -65,14 +69,13 @@ class Scraper():
             print("URL2!!!!!!!: ", full_url)
 
 
-            if full_url in self.scraped_urls:
+            if full_url in self.pages_visited:
                 print("already visited")
             elif str(full_url).startswith("https://www.barnesandnoble.com/w/"):
-                #     print("Add url to list", full_url)
-                #     #self.scrape(url2)
-                #     found_urls.append(full_url)
-                print("apend to list")
-                found_urls.append(str(full_url))
+
+                if (str(full_url) not in links_todo) and (str(full_url) not in found_urls) and ((len(links_todo)+len(found_urls))<20000):
+                    print("apend to list")
+                    found_urls.append(str(full_url))
         print("what is in list found_urls?", found_urls)
         return found_urls
 
@@ -80,14 +83,16 @@ class Scraper():
 #start scraper
 links_todo = ['https://www.barnesandnoble.com/']
 scraper = Scraper()
-while(links_todo):#until list is emtpy, keep crawling
+while(links_todo and (len(links_todo)<20000)):#until list is emtpy, keep crawling
+    print("length of links_todo: ", len(links_todo))
     url = links_todo.pop() #returns last element and removes that element from the list
-    new_urls = scraper.scrape(url)
+    print("length of links_todo after pop: ", len(links_todo))
+    new_urls = scraper.scrape(url, links_todo)
     links_todo += new_urls
 
 
-    print("!!!!!!!!!!!!!!!")
-    print("links to do: ", links_todo)
+    # print("!!!!!!!!!!!!!!!")
+    # print("links to do: ", links_todo)
 
 
 
