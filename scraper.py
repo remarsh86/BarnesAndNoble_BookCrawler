@@ -87,8 +87,11 @@ while(links_todo and (len(links_todo)<20000)):#until list is emtpy, keep crawlin
     print("length of links_todo: ", len(links_todo))
     url = links_todo.pop() #returns last element and removes that element from the list
     print("length of links_todo after pop: ", len(links_todo))
-    new_urls = scraper.scrape(url, links_todo)
-    links_todo += new_urls
+    try:
+        new_urls = scraper.scrape(url, links_todo)
+        links_todo += new_urls
+    except:
+        print("Connection error")
 
 
     # print("!!!!!!!!!!!!!!!")
