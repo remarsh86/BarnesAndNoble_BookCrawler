@@ -3,7 +3,6 @@ import urllib
 from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urljoin
-from urllib.request import urlopen
 import parser as ps
 import re
 import time
@@ -109,8 +108,7 @@ while(links_todo and (len(links_todo)<1000)):#until list is emtpy, keep crawling
     # response_delay = time.time() -t0
     # time.sleep(10*response_delay)
 
-    # print("!!!!!!!!!!!!!!!")
-    # print("links to do: ", links_todo)
+
 
 
 
