@@ -15,8 +15,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scraper.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="150">
               <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+=======
+            <state relative-caret-position="238">
+              <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+>>>>>>> norecursion_noproxies_vers2
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#1519#1550#0" />
@@ -42,6 +47,30 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="233">
               <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#40#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-595">
+              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/indexer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
               <folding>
                 <element signature="e#40#53#0" expanded="true" />
               </folding>
@@ -82,6 +111,14 @@
       <find>!!!!</find>
       <find>URL</find>
       <find>follow</find>
+      <find>ean=9781984822178</find>
+      <find>where-the</find>
+      <find>What</find>
+      <find>history-of</find>
+      <find>ean</find>
+      <find>Boots</find>
+      <find>https://www.barnesandnoble.com/w/foundling-and-other-tales-of-prydain-lloyd-alexander/1101105101?ean=9780805080537</find>
+      <find>https://www.barnesandnoble.com/w/los-vivientes-matt-de-la-pe-a/1122494223?ean=9786077356240</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/scraped_sites</dir>
@@ -93,17 +130,29 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/indexer.py" />
         <option value="$PROJECT_DIR$/parser.py" />
+=======
+        <option value="$PROJECT_DIR$/parser.py" />
+        <option value="$PROJECT_DIR$/indexer.py" />
+>>>>>>> norecursion_noproxies_vers2
         <option value="$PROJECT_DIR$/scraper.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="-229" />
     <option name="y" value="-1048" />
     <option name="width" value="1863" />
     <option name="height" value="1028" />
+=======
+    <option name="x" value="36" />
+    <option name="y" value="23" />
+    <option name="width" value="1391" />
+    <option name="height" value="797" />
+>>>>>>> norecursion_noproxies_vers2
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -195,11 +244,17 @@
       <workItem from="1561044907754" duration="9053000" />
       <workItem from="1561554452550" duration="4274000" />
       <workItem from="1561582928020" duration="41000" />
+<<<<<<< HEAD
       <workItem from="1561583218795" duration="13507000" />
+=======
+      <workItem from="1561921436457" duration="17759000" />
+      <workItem from="1562308069495" duration="13482000" />
+>>>>>>> norecursion_noproxies_vers2
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="26875000" />
   </component>
   <component name="ToolWindowManager">
@@ -207,21 +262,48 @@
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21197145" />
+=======
+    <option name="totallyTimeSpent" value="44609000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="36" y="23" width="1391" height="797" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2905856" />
+>>>>>>> norecursion_noproxies_vers2
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33653846" />
+=======
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1319149" />
+>>>>>>> norecursion_noproxies_vers2
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.20940171" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32918397" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.60141844" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32907802" />
+>>>>>>> norecursion_noproxies_vers2
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -233,7 +315,11 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/WebCrawlerBeautSoup_env$scraper.coverage" NAME="scraper Coverage Results" MODIFIED="1561902580904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+=======
+    <SUITE FILE_PATH="coverage/WebCrawlerBeautSoup_env$scraper.coverage" NAME="scraper Coverage Results" MODIFIED="1562447358962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> norecursion_noproxies_vers2
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scraped_sites/0">
@@ -241,6 +327,16 @@
         <state relative-caret-position="-5382" />
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file:///anaconda3/lib/python3.7/ssl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="981">
+          <caret line="1051" selection-start-line="1051" selection-end-line="1051" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> norecursion_noproxies_vers2
     <entry file="file://$PROJECT_DIR$/lib/python3.7/site-packages/requests/sessions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7575">
@@ -255,33 +351,58 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/indexer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#40#53#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-595">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+>>>>>>> norecursion_noproxies_vers2
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="76" column="8" lean-forward="true" selection-start-line="76" selection-start-column="10" selection-end-line="77" selection-end-column="30" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/indexer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding>
+            <element signature="e#40#53#0" expanded="true" />
+>>>>>>> norecursion_noproxies_vers2
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scraper.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="150">
           <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#1519#1550#0" />
+=======
+        <state relative-caret-position="238">
+          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+>>>>>>> norecursion_noproxies_vers2
           </folding>
         </state>
       </provider>

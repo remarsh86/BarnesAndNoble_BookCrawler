@@ -3,6 +3,9 @@ from datetime import datetime
 import indexer as ix
 
 
+accepted_fields = ['title', 'authors', 'isbn_13', 'publisher', 'publication_date', 'pages', 'sales_rank:', 'product_dimensions',
+                       'edition_description', 'series', 'sold_by', 'format', 'file_size', 'age_range']
+
 
 def parse_book_info(content):
     # find all html tables oc class "pain centered and parse book info"
@@ -37,7 +40,9 @@ def parse_book_info(content):
         product_table = content.find_all("table", {'class': "plain centered"})
 
         print(product_table)
-        table_rows = product_table[0]
+
+        #table_rows = product_table[0]
+
 
         table_rows = product_table[0].find('tbody').findAll('tr')
 
@@ -69,18 +74,22 @@ def parse_book_info(content):
 
     print("item: ", item)
 
+
+    solr_book = {}
+
     #check if item dictionary is empty
     if not bool(item): #if is empty
         print("Item is empty; nothing parsed.")
     else:
         print("item keys: ", item.keys())
-        # for k in item.keys():
-        #     print("key:", k)
-        if len(list(item.keys()))<3:
+
+        for k in item.keys():
+            if k in accepted_fields:
+                solr_book[k] = item[k]
+
+        if len(list(solr_book.keys()))<3:
             print("Item not a book")
         else:
             print(item)
-            ix.index_item(item)
-
-
+            ix.index_item(solr_book)
 
